@@ -121,7 +121,13 @@ public class NameRegister extends AppCompatActivity {
         }
         return strResult;
     }
-
+    private byte[] imageViewToByte(ImageView imageView) {
+        Bitmap bitmap = ((BitmapDrawable)imageView.getDrawable()).getBitmap();
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        byte[] byteArray = stream.toByteArray();
+        return byteArray;
+    }
     public void RadioButtonClicked(View view) {
         boolean checked = ((RadioButton) view).isChecked();
         switch (view.getId()) {
@@ -180,19 +186,13 @@ public class NameRegister extends AppCompatActivity {
                             facebook_emp,
                             email_emp,
                             dateapp_emp,
-                            imageNameString
+                            imageViewToByte(imageView)
                     );
                     finish();
                 }   // if
             }   // onClick
 
-            private byte[] imageViewToByte(ImageView imageView) {
-                Bitmap bitmap = ((BitmapDrawable)imageView.getDrawable()).getBitmap();
-                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                byte[] byteArray = stream.toByteArray();
-                return byteArray;
-            }
+
 
         });
     }   // buttonController

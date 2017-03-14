@@ -33,7 +33,7 @@ public class MyData extends SQLiteOpenHelper   {
             "Email_Emp TEXT, "+             //อีเมล          11
             "Salary_Emp TEXT, "+            //เงินเดือน        12
             "DateApp_Emp TEXT, "+           //วันที่สมัคร        13
-            "Image_Emp TEXT,"+                //รูป           14
+            "Image_Emp BLOB,"+                //รูป           14
             "Position_Emp TEXT"+             //ตำแหน่ง         15
             ");";
 

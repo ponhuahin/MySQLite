@@ -57,7 +57,7 @@ public class MyName {
                             String strFacebook_Emp,
                             String strEmail_Emp,
                             String strDateApp_Emp,
-                            String strImage_Emp
+                            byte[] strImage_Emp
                             ) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(emp_position, strPosition_Emp);

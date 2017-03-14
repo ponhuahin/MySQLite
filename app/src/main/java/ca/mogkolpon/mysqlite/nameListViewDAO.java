@@ -39,7 +39,8 @@ public class nameListViewDAO {
 //            todoList1.setAge_Emp(cursor.getString(3));
 //            todoList1.setDateBirth_Emp(cursor.getString(4));
 //            todoList1.setAddress_Emp(cursor.getString(5));
-            todoList1.setNickname_Emp(cursor.getString(6));
+//            todoList1.setNickname_Emp(cursor.getString(6));
+            todoList1.setPosition_Emp(cursor.getString(14));
 //            todoList1.setTele_Emp(cursor.getInt(7));
 //            todoList1.setLine_Emp(cursor.getString(8));
 //            todoList1.setFacebook_Emp(cursor.getString(9));
@@ -47,8 +48,8 @@ public class nameListViewDAO {
 //            todoList1.setSex_Emp(cursor.getString(11));
 //            todoList1.setSalary_Emp(cursor.getString(12));
 //            todoList1.setDateApp_Emp(cursor.getString(13));
-            todoList1.setImage_Emp(cursor.getBlob(14));
-//            todoList1.setPosition_Emp(cursor.getString(15));
+//            byte[] Image_Emp = cursor.getBlob(14);
+            todoList1.setImage_Emp(cursor.getBlob(13));
 
             todoList.add(todoList1);
             cursor.moveToNext();

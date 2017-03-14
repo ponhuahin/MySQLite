@@ -22,46 +22,85 @@ public class NameListView extends BaseAdapter {
     private static LayoutInflater inflater;
     ArrayList<TodoList> myTodoList;
 
-    public NameListView(Activity activity,ArrayList<TodoList> mtTodoList) {
+    public NameListView(Activity activity, ArrayList<TodoList> mtTodoList) {
         this.myTodoList = mtTodoList;
         this.activity = activity;
-        inflater = (LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
     public int getCount() {
         return myTodoList.size();
     }
+
     @Override
     public TodoList getItem(int position) {
         return myTodoList.get(position);
     }
+
     @Override
     public long getItemId(int position) {
         return myTodoList.get(position).getID_Emp();
     }
+//    private class ViewHolder{
+//        ImageView imageView;
+//        TextView txtName, txtPrice;
+//    }
+//    @Override
+//    public View getView(int position, View view, ViewGroup viewGroup) {
+//
+//        View row = view;
+//        ViewHolder holder = new ViewHolder();
+//
+//        if(row == null){
+//            LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//            row = inflater.inflate(R.layout.name_listview, null);
+//
+//            holder.txtName = (TextView) row.findViewById(R.id.lv_nickname);
+//            holder.txtPrice = (TextView) row.findViewById(R.id.lv_telename);
+//            holder.imageView = (ImageView) row.findViewById(R.id.name_ListView_Image);
+//            row.setTag(holder);
+//        }
+//        else {
+//            holder = (ViewHolder) row.getTag();
+//        }
+//
+//        TodoList List = myTodoList.get(position);
+//
+//        holder.txtName.setText(List.getName_Emp());
+//        holder.txtPrice.setText(List.getNickname_Emp());
+//
+//        byte[] Image = List.getImage_Emp();
+//        Bitmap bitmap = BitmapFactory.decodeByteArray(Image, 0, Image.length);
+//        holder.imageView.setImageBitmap(bitmap);
+//
+//        return row;
+//    }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View v = convertView;
         LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        v = inflater.inflate(R.layout.name_listview,null);
-        TextView textView = (TextView)v.findViewById(R.id.lv_nickname);
-        TextView textView1 = (TextView)v.findViewById(R.id.lv_telename);
-        ImageView imageView=(ImageView)v.findViewById(R.id.name_ListView_Image);
+        v = inflater.inflate(R.layout.name_listview, null);
+        TextView textView = (TextView) v.findViewById(R.id.lv_nickname);
+        TextView textView1 = (TextView) v.findViewById(R.id.lv_telename);
+        ImageView imageView = (ImageView) v.findViewById(R.id.name_ListView_Image);
 //        TextView textView2 = (TextView)v.findViewById(R.id.admin_Password);
 
         TodoList todoList = myTodoList.get(position);
         textView.setText(todoList.getName_Emp());
 
         TodoList todoList1 = myTodoList.get(position);
-        textView1.setText(todoList1.getNickname_Emp());
+        textView1.setText(todoList1.getPosition_Emp());
+//
+//        TodoList todoList1 = myTodoList.get(position);
+//        textView1.setText(todoList1.getNickname_Emp());
 
 //        TodoList todoList2 = myTodoList.get(position);
 //        imageView.setImageAlpha(Integer.parseInt(todoList2.getImage_Emp()));
 //        TodoList todoList2 = myTodoList.get(position);
 //        textView2.setText(todoList2.getPassword_admin());
-        byte[] Image = TodoList.getImage_Emp();
-        Bitmap bitmap = BitmapFactory.decodeByteArray(Image, 0, Image.length);
+        byte[] image_Emp = TodoList.getImage_Emp();
+        Bitmap bitmap = BitmapFactory.decodeByteArray(image_Emp, 0, image_Emp.length);
         imageView.setImageBitmap(bitmap);
 
 

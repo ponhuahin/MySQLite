@@ -85,7 +85,6 @@ public class NameRegister extends AppCompatActivity {
         });
     }
 
-
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if ((requestCode == 1) && (resultCode == RESULT_OK)) {
@@ -191,8 +190,6 @@ public class NameRegister extends AppCompatActivity {
                     finish();
                 }   // if
             }   // onClick
-
-
 
         });
     }   // buttonController

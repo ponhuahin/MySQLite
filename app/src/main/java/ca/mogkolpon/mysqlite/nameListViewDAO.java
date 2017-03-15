@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 
@@ -54,29 +56,37 @@ public class nameListViewDAO {
         cursor.close();     //ปิด
         return todoList;    //รีเทอนกับ
     }
+//      เริ่ม   แก้ไข ข้อมูล
+    public void update(TodoList todoList){
+        TodoList updateTodoList = todoList;
+        ContentValues values = new ContentValues();
+        values.put("Position_Emp",updateTodoList.getPosition_Emp());
+        values.put("Salary_Emp",updateTodoList.getSalary_Emp());
+        values.put("Name_Emp",updateTodoList.getName_Emp());
+        values.put("Nickname_Emp",updateTodoList.getNickname_Emp());
+        values.put("DateBirth_Emp",updateTodoList.getDateBirth_Emp());
+        values.put("Age_Emp",updateTodoList.getAge_Emp());
+        values.put("Address_Emp",updateTodoList.getAddress_Emp());
+        values.put("Tele_Emp",updateTodoList.getTele_Emp());
+        values.put("Line_Emp",updateTodoList.getLine_Emp());
+        values.put("Facebook_Emp",updateTodoList.getFacebook_Emp());
+        values.put("Email_Emp",updateTodoList.getEmail_Emp());
 
 
-    //  เริ่ม   แก้ไข ข้อมูล
-//    public void update(TodoList todoList){
-//        TodoList updateTodoList = todoList;
-//        ContentValues values = new ContentValues();
-//        values.put("Name_admin",updateTodoList.getName_admin());
-//        values.put("Username_admin",updateTodoList.getUsername_admin());
-//        values.put("Password_admin",updateTodoList.getPassword_admin());
-//        values.put("ID_admin",updateTodoList.getID_admin());
-//
-//        String where = "ID_admin=" + updateTodoList.getID_admin();
-//        this.database.update("admin_db",values, where,null);
-//        Log.d("Todo updateTodoList","okokokokokok");        //เมื่อกดแล้ว ให้ขึ้น โชว์บอก
-//    }//  จบ แก้ไข ข้อมูล
-//
-//
-//    //  เริ่ม   ลบ ข้อมูล
-//    public void delete(TodoList todoList){
-//        TodoList delTodolist = todoList;
-//        String sqlText = "DELETE FROM admin_db WHERE ID_admin=" + delTodolist.getID_admin();
-//        this.database.execSQL(sqlText);
-//    }//  จบ ลบ ข้อมูล
+        values.put("ID_Emp",updateTodoList.getID_Emp());
+
+        String where = "ID_Emp=" + updateTodoList.getID_Emp();
+        this.database.update("Employee_db",values, where,null);
+        Log.d("Todo updateTodoList","okokokokokok");        //เมื่อกดแล้ว ให้ขึ้น โชว์บอก
+    }//  จบ แก้ไข ข้อมูล
+
+    //  เริ่ม   ลบ ข้อมูล
+    public void delete(TodoList todoList){
+        TodoList delTodolist = todoList;
+        String sqlText = "DELETE FROM Employee_db WHERE ID_Emp=" + delTodolist.getID_Emp();
+        this.database.execSQL(sqlText);
+    }//  จบ ลบ ข้อมูล
 
 
-}
+
+}// จบ class nameListViewDAO

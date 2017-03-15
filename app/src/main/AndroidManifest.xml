@@ -17,13 +17,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Popo"/>
-        <activity android:name=".Admin_SingnUp"/>
-        <activity android:name=".AdminEdit"/>
-        <activity android:name=".AdminShow"/>
-        <activity android:name=".NameRegister"/>
-        <activity android:name=".NameShow"/>
-
+        <activity android:name=".Popo" />
+        <activity android:name=".Admin_SingnUp" />
+        <activity android:name=".AdminEdit" />
+        <activity android:name=".AdminShow" />
+        <activity android:name=".NameRegister" />
+        <activity android:name=".NameShow" />
+        <activity android:name=".NameEdit"></activity>
     </application>
 
 </manifest>

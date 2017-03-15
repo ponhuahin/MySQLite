@@ -27,7 +27,7 @@ public class MyData extends SQLiteOpenHelper   {
             "DateBirth_Emp TEXT, "+         //วันเดือนปีเกิด      5
             "Address_Emp TEXT, "+           //ที่อยุ่          6
             "Nickname_Emp TEXT, "+          //ชื่อเล่น         7
-            "Tele_Emp int, "+               //เบอร์โทร        8
+            "Tele_Emp TEXT, "+               //เบอร์โทร        8
             "Line_Emp TEXT, "+              //ไลน์          9
             "Facebook_Emp TEXT, "+          //Facebook    10
             "Email_Emp TEXT, "+             //อีเมล          11

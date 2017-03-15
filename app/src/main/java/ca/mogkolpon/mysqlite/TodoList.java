@@ -24,15 +24,7 @@ import java.util.Date;
 //        DateDue_Job,Getjob_Job,DateApp_Company,DateApp_Withdraw;
 
 public class TodoList implements Serializable {
-//    public TodoList(int ID_Emp, String name_Emp, String nickname_Emp, String age_Emp,
-//                    byte[] image_Emp) {
-//
-//        this.ID_Emp = ID_Emp;
-//        this.Name_Emp = name_Emp;
-//        this.Nickname_Emp = nickname_Emp;
-//        this.Age_Emp = age_Emp;
-//        this.Image_Emp = image_Emp;
-//    }
+
 
     public int getID_admin() {
         return ID_admin;
@@ -50,11 +42,12 @@ public class TodoList implements Serializable {
         this.ID_Emp = ID_Emp;
     }
 
-    public int getTele_Emp() {
+
+    public String getTele_Emp() {
         return Tele_Emp;
     }
 
-    public void setTele_Emp(int tele_Emp) {
+    public void setTele_Emp(String tele_Emp) {
         Tele_Emp = tele_Emp;
     }
 
@@ -411,12 +404,12 @@ public class TodoList implements Serializable {
     }
 
     private int ID_admin,
-            ID_Emp, Tele_Emp,
+            ID_Emp,
             ID_Workoff, ID_Job_Workoff, ID_Employee_Workoff,
             ID_Job, ID_Company_Job, Money_Job, ID_Company, Telename_Company, ID_Withdraw, ID_Employee_Withdraw;
 
     private String Name, sss, Name_admin, Username_admin, Password_admin,
-            Name_Emp, Sex_Emp, Age_Emp, Address_Emp, Nickname_Emp, Line_Emp, Facebook_Emp, Email_Emp, Salary_Emp, Position_Emp,
+            Tele_Emp,Name_Emp, Sex_Emp, Age_Emp, Address_Emp, Nickname_Emp, Line_Emp, Facebook_Emp, Email_Emp, Salary_Emp, Position_Emp,
             Workoff_Workoff, DateWork_Workoff, Job_Job, Specs_Job,
             Company_Company, Address_Company, Line_Company, Facebook_Company, Email_Company, Withdraw_Withdraw,
             DateBirth_Emp, DateApp_Emp,

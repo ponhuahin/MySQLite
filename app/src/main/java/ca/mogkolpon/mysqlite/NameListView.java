@@ -42,40 +42,7 @@ public class NameListView extends BaseAdapter {
     public long getItemId(int position) {
         return myTodoList.get(position).getID_Emp();
     }
-//    private class ViewHolder{
-//        ImageView imageView;
-//        TextView txtName, txtPrice;
-//    }
-//    @Override
-//    public View getView(int position, View view, ViewGroup viewGroup) {
-//
-//        View row = view;
-//        ViewHolder holder = new ViewHolder();
-//
-//        if(row == null){
-//            LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//            row = inflater.inflate(R.layout.name_listview, null);
-//
-//            holder.txtName = (TextView) row.findViewById(R.id.lv_nickname);
-//            holder.txtPrice = (TextView) row.findViewById(R.id.lv_telename);
-//            holder.imageView = (ImageView) row.findViewById(R.id.name_ListView_Image);
-//            row.setTag(holder);
-//        }
-//        else {
-//            holder = (ViewHolder) row.getTag();
-//        }
-//
-//        TodoList List = myTodoList.get(position);
-//
-//        holder.txtName.setText(List.getName_Emp());
-//        holder.txtPrice.setText(List.getNickname_Emp());
-//
-//        byte[] Image = List.getImage_Emp();
-//        Bitmap bitmap = BitmapFactory.decodeByteArray(Image, 0, Image.length);
-//        holder.imageView.setImageBitmap(bitmap);
-//
-//        return row;
-//    }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View v = convertView;

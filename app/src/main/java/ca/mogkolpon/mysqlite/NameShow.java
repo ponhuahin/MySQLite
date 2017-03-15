@@ -21,10 +21,14 @@ import java.util.ArrayList;
 
 public class NameShow extends Activity {
     ListView nameListView;
+    private SQLiteDatabase database;
+    private MyData myData;
+    Cursor mCursor;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.name_show);
+
 
         nameListView=(ListView)findViewById(R.id.name_ListView);
     }
@@ -34,46 +38,51 @@ public class NameShow extends Activity {
         nameListViewDAO1.open();
         ArrayList<TodoList> myList = nameListViewDAO1.getAllTodoList();
 
+        myData = new MyData(this);
+        database = myData.getWritableDatabase();
+        mCursor = database.rawQuery("SELECT * FROM admin_db", null);
+
+
         final NameListView adapter = new NameListView(this,myList);
         nameListView.setAdapter(adapter);
         nameListViewDAO1.close();
 
 // กดปกติ
-//        nameListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {  //ทำไให้ สามารถกด เลือก คงค่าเป็นไอดีได้
-//            public void onItemClick(AdapterView<?> patent, View view, int position, long id) {
-//                Toast.makeText(getApplicationContext(),String.valueOf(adapter.getItemId(position)),Toast.LENGTH_SHORT).show();
-////                Intent editIntent = new Intent(getApplicationContext(), AdminEdit.class);
-////                editIntent.putExtra("editTodoList",adapter.getItem(position));
-////                startActivity(editIntent);
-//            }
-//        });
-//// กดค้าง
-//        nameListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {  //ทำไให้ สามารถกด เลือก คงค่าเป็นไอดีได้
-//            public boolean onItemLongClick(AdapterView<?> patent, View view, final int position, long id) {
-//                AlertDialog.Builder builder = new AlertDialog.Builder(NameShow.this);
-//                builder.setPositiveButton("ลบ ไม่ได้", new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int which) {
-//
-//                        TodoList todoList1 = new TodoList();
-//                        adapter.getItem(position);
-//                        database.execSQL("DELETE FROM admin_db WHERE ID_admin=" + todoList1.getID_admin());
-//                        mCursor.requery();
-//                        nameListView.setAdapter(adapter);
-//                        Toast.makeText(getApplicationContext(),"ลบข้อมูลนักเรียนเรียบร้อย", Toast.LENGTH_SHORT).show();
-//                        Log.d("Todo updateTodoList","ลบข้อมูลเรียบร้อย");
-//                    }
-//                });
-//                builder.setNegativeButton("แก้ไข", new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        Intent editIntent = new Intent(getApplicationContext(), AdminEdit.class);
-//                        editIntent.putExtra("editTodoList",adapter.getItem(position));
-//                        startActivity(editIntent);
-////                        dialog.cancel();
-//                    }
-//                });
-//                builder.show();
-//                return true;
-//            }
-//        });
+        nameListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {  //ทำไให้ สามารถกด เลือก คงค่าเป็นไอดีได้
+            public void onItemClick(AdapterView<?> patent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(),String.valueOf(adapter.getItemId(position)),Toast.LENGTH_SHORT).show();
+//                Intent editIntent = new Intent(getApplicationContext(), AdminEdit.class);
+//                editIntent.putExtra("editTodoList",adapter.getItem(position));
+//                startActivity(editIntent);
+            }
+        });
+// กดค้าง
+        nameListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {  //ทำไให้ สามารถกด เลือก คงค่าเป็นไอดีได้
+            public boolean onItemLongClick(AdapterView<?> patent, View view, final int position, long id) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(NameShow.this);
+                builder.setPositiveButton("ลบ ไม่ได้", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        TodoList todoList1 = new TodoList();
+                        adapter.getItem(position);
+                        database.execSQL("DELETE FROM admin_db WHERE ID_admin=" + todoList1.getID_admin());
+                        mCursor.requery();
+                        nameListView.setAdapter(adapter);
+                        Toast.makeText(getApplicationContext(),"ลบข้อมูลนักเรียนเรียบร้อย", Toast.LENGTH_SHORT).show();
+                        Log.d("Todo updateTodoList","ลบข้อมูลเรียบร้อย");
+                    }
+                });
+                builder.setNegativeButton("แก้ไข", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent editIntent = new Intent(getApplicationContext(), NameEdit.class);
+                        editIntent.putExtra("editTodoList",adapter.getItem(position));
+                        startActivity(editIntent);
+//                        dialog.cancel();
+                    }
+                });
+                builder.show();
+                return true;
+            }
+        });
     }
 }

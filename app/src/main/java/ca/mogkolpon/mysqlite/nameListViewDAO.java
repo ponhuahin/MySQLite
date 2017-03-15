@@ -33,30 +33,28 @@ public class nameListViewDAO {
         TodoList todoList1;
         while (!cursor.isAfterLast()){  //วนลูบ เลกคอดแรก ถึง เลกคอดสุดท้าย
             todoList1 = new TodoList();
-//            todoList1.setID_Emp(cursor.getInt(0));
-            todoList1.setName_Emp(cursor.getString(1));
-//            todoList1.setSex_Emp(cursor.getString(2));
-//            todoList1.setAge_Emp(cursor.getString(3));
-//            todoList1.setDateBirth_Emp(cursor.getString(4));
-//            todoList1.setAddress_Emp(cursor.getString(5));
-//            todoList1.setNickname_Emp(cursor.getString(6));
-            todoList1.setPosition_Emp(cursor.getString(14));
-//            todoList1.setTele_Emp(cursor.getInt(7));
-//            todoList1.setLine_Emp(cursor.getString(8));
-//            todoList1.setFacebook_Emp(cursor.getString(9));
-//            todoList1.setEmail_Emp(cursor.getString(10));
-//            todoList1.setSex_Emp(cursor.getString(11));
-//            todoList1.setSalary_Emp(cursor.getString(12));
-//            todoList1.setDateApp_Emp(cursor.getString(13));
-//            byte[] Image_Emp = cursor.getBlob(14);
-            todoList1.setImage_Emp(cursor.getBlob(13));
-
+            todoList1.setID_Emp(cursor.getInt(0));            //รหัสประชาชน
+            todoList1.setName_Emp(cursor.getString(1));         //ชื่อ-นามสกุล
+            todoList1.setSex_Emp(cursor.getString(2));        //เพศ
+            todoList1.setAge_Emp(cursor.getString(3));        //อายุ
+            todoList1.setDateBirth_Emp(cursor.getString(4));  //วัน เดือน ปี เกิด
+            todoList1.setAddress_Emp(cursor.getString(5));    //ที่อยุ่
+            todoList1.setNickname_Emp(cursor.getString(6));   //ชื่อเล่น
+            todoList1.setTele_Emp(cursor.getString(7));          //เบอร์โทร
+            todoList1.setLine_Emp(cursor.getString(8));       //ไลน์
+            todoList1.setFacebook_Emp(cursor.getString(9));   //เฟส
+            todoList1.setEmail_Emp(cursor.getString(10));     //อีเมล
+            todoList1.setSalary_Emp(cursor.getString(11));    //เงินเดือน
+            todoList1.setDateApp_Emp(cursor.getString(12));   //วันที่บันทึก
+            todoList1.setImage_Emp(cursor.getBlob(13));         //ภาพ   ////  ทำให้ แสดงภาพหลายภาพไม่ได้
+            todoList1.setPosition_Emp(cursor.getString(14));    //ตำแหน่ง
             todoList.add(todoList1);
             cursor.moveToNext();
         }
         cursor.close();     //ปิด
         return todoList;    //รีเทอนกับ
     }
+
 
     //  เริ่ม   แก้ไข ข้อมูล
 //    public void update(TodoList todoList){

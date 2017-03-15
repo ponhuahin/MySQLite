@@ -31,10 +31,10 @@ import java.util.Calendar;
 public class NameRegister extends AppCompatActivity {
     MyData myData;
     /////////////////////////////
-    private EditText Position_Emp, Salary_Emp, ID_Emp, Name_Emp, Nickname_Emp, DateBirth_Emp, Age_Emp, Address_Emp, Tel_Emp, Line_Emp, Facebook_Emp, Email_Emp;
+    private EditText Position_Emp, Salary_Emp, Idcard_Emp, Name_Emp, Nickname_Emp, DateBirth_Emp, Age_Emp, Address_Emp, Tele_Emp, Line_Emp, Facebook_Emp, Email_Emp;
     private Button Name_Reg_But_Save, Name_Reg_But;
-    private String position_emp, salary_emp, id_emp, name_emp, nickname_emp, datebirth_emp, age_emp,
-            address_emp, tel_emp, line_emp, facebook_emp, email_emp, image_emp, dateapp_emp, imagePathString, imageNameString;
+    private String position_emp, salary_emp, idcard_emp, name_emp, nickname_emp, datebirth_emp, age_emp,
+            address_emp, tele_emp, line_emp, facebook_emp, email_emp, image_emp, dateapp_emp, imagePathString, imageNameString;
     String Sex_Emp0 = "ชาย";
     private ImageView imageView;
     DatePickerDialog datePickerDialog;
@@ -146,45 +146,48 @@ public class NameRegister extends AppCompatActivity {
         Name_Reg_But_Save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                position_emp = Position_Emp.getText().toString().trim();        //ตำแหน่ง  15
-                salary_emp = Salary_Emp.getText().toString().trim();            //เงินเดือน     12
-                id_emp = ID_Emp.getText().toString().trim();                    //รหัสบัตรประชาชน   1
+
+                idcard_emp = Idcard_Emp.getText().toString().trim();             //รหัสบัตรประชาชน    1
                 name_emp = Name_Emp.getText().toString().trim();                //ชื่อ               2
-                nickname_emp = Nickname_Emp.getText().toString().trim();        //ชื่อเล่น             7
+                nickname_emp = Nickname_Emp.getText().toString().trim();        //ชื่อเล่น             3
+                                                                                // เพส              4
                 datebirth_emp = DateBirth_Emp.getText().toString().trim();      //วัน เดือน ปี เกิด      5
-                age_emp = Age_Emp.getText().toString().trim();                  //อายุ               4
-                address_emp = Address_Emp.getText().toString().trim();          //ที่อยู่               6
-                tel_emp = Tel_Emp.getText().toString().trim();                  //เบอร์โทร            8
+                age_emp = Age_Emp.getText().toString().trim();                  //อายุ               6
+                address_emp = Address_Emp.getText().toString().trim();          //ที่อยู่               7
+                tele_emp = Tele_Emp.getText().toString().trim();                //เบอร์โทร            8
                 line_emp = Line_Emp.getText().toString().trim();                //ไลน์               9
                 facebook_emp = Facebook_Emp.getText().toString().trim();        //เฟส               10
                 email_emp = Email_Emp.getText().toString().trim();              //อีเมล              11
-                imageViewToByte(imageView);
+                position_emp = Position_Emp.getText().toString().trim();        //ตำแหน่ง            12
+                salary_emp = Salary_Emp.getText().toString().trim();            //เงินเดือน            13
+                                                                                // วันที่บันทึก          14
+                imageViewToByte(imageView);                                     //รูป                15
 
                 if (position_emp.equals("") ||              //ตำแหน่ง           15
                         salary_emp.equals("") ||           //เงินเดือน           12
-                        id_emp.equals("") ||              //รหัสบัตรประชาชน     1
+                        idcard_emp.equals("") ||              //รหัสบัตรประชาชน     1
                         name_emp.equals("") ||              //ชื่อ               2
                         nickname_emp.equals("") ||          //ชื่อเล่น             7
                         datebirth_emp.equals("") ||         //วัน เดือน ปี เกิด      5
                         address_emp.equals("") ||            //ที่อยู่               6
-                        tel_emp.equals("")) {              //เบอร์โทร            8
+                        tele_emp.equals("")) {              //เบอร์โทร            8
                     Toast.makeText(NameRegister.this, getResources().getString(R.string.haveSpace), Toast.LENGTH_SHORT).show();
                 } else {
                     MyName myName = new MyName(NameRegister.this);
-                    myName.addNewValue(position_emp,
-                            salary_emp,
-                            id_emp,
+                    myName.addNewValue(idcard_emp,
                             name_emp,
                             nickname_emp,
                             Sex_Emp0,
                             datebirth_emp,
                             age_emp,
                             address_emp,
-                            tel_emp,
+                            tele_emp,
                             line_emp,
                             facebook_emp,
                             email_emp,
                             dateapp_emp,
+                            position_emp,
+                            salary_emp,
                             imageViewToByte(imageView)
                     );
                     finish();
@@ -198,14 +201,14 @@ public class NameRegister extends AppCompatActivity {
     private void bindWidget() {                 //คือการผูกความสัมพันระหว่าง ตัวแปร และ ออปเจค บน Activity  เชื่อมต่อ  หน้าออกแบบ admin_singn_up
         Position_Emp = (EditText) findViewById(R.id.Position_Emp);      //ตำแหน่ง           15
         Salary_Emp = (EditText) findViewById(R.id.Salary_Emp);          //เงินเดือน           12
-        ID_Emp = (EditText) findViewById(R.id.ID_Emp);                  //รหัสบัตรประชาชน     1
+        Idcard_Emp = (EditText) findViewById(R.id.Idcard_Emp);                  //รหัสบัตรประชาชน     1
         Name_Emp = (EditText) findViewById(R.id.Name_Emp);              //ชื่อ               2
         Nickname_Emp = (EditText) findViewById(R.id.Nickname_Emp);      //ชื่อเล่น             7
         imageView = (ImageView) findViewById(R.id.Image_Emp);             //รูป               14
         DateBirth_Emp = (EditText) findViewById(R.id.DateBirth_Emp);    //วัน เดือน ปี เกิด      5
         Age_Emp = (EditText) findViewById(R.id.Age_Emp);                //อายุ               4
         Address_Emp = (EditText) findViewById(R.id.Address_Emp);        //ที่อยู่               6
-        Tel_Emp = (EditText) findViewById(R.id.Tel_Emp);                //เบอร์โทร            8
+        Tele_Emp = (EditText) findViewById(R.id.Tele_Emp);                //เบอร์โทร            8
         Line_Emp = (EditText) findViewById(R.id.Line_Emp);              //ไลน์               9
         Facebook_Emp = (EditText) findViewById(R.id.Facebook_Emp);      //เฟส               10
         Email_Emp = (EditText) findViewById(R.id.Email_Emp);            //อีเมล              11

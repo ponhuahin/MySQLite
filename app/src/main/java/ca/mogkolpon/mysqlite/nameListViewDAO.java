@@ -35,21 +35,23 @@ public class nameListViewDAO {
         TodoList todoList1;
         while (!cursor.isAfterLast()){  //วนลูบ เลกคอดแรก ถึง เลกคอดสุดท้าย
             todoList1 = new TodoList();
-            todoList1.setID_Emp(cursor.getInt(0));            //รหัสประชาชน
-            todoList1.setName_Emp(cursor.getString(1));         //ชื่อ-นามสกุล
-            todoList1.setSex_Emp(cursor.getString(2));        //เพศ
-            todoList1.setAge_Emp(cursor.getString(3));        //อายุ
-            todoList1.setDateBirth_Emp(cursor.getString(4));  //วัน เดือน ปี เกิด
-            todoList1.setAddress_Emp(cursor.getString(5));    //ที่อยุ่
-            todoList1.setNickname_Emp(cursor.getString(6));   //ชื่อเล่น
-            todoList1.setTele_Emp(cursor.getString(7));          //เบอร์โทร
-            todoList1.setLine_Emp(cursor.getString(8));       //ไลน์
-            todoList1.setFacebook_Emp(cursor.getString(9));   //เฟส
-            todoList1.setEmail_Emp(cursor.getString(10));     //อีเมล
-            todoList1.setSalary_Emp(cursor.getString(11));    //เงินเดือน
-            todoList1.setDateApp_Emp(cursor.getString(12));   //วันที่บันทึก
-            todoList1.setImage_Emp(cursor.getBlob(13));         //ภาพ   ////  ทำให้ แสดงภาพหลายภาพไม่ได้
-            todoList1.setPosition_Emp(cursor.getString(14));    //ตำแหน่ง
+            todoList1.setID_Emp(cursor.getInt(0));                  //id
+            todoList1.setIdcard_Emp(cursor.getString(1));         //รหัสประชาชน
+            todoList1.setName_Emp(cursor.getString(2));         //ชื่อ-นามสกุล
+            todoList1.setNickname_Emp(cursor.getString(3));   //ชื่อเล่น
+            todoList1.setSex_Emp(cursor.getString(4));        //เพศ
+            todoList1.setDateBirth_Emp(cursor.getString(5));  //วัน เดือน ปี เกิด
+            todoList1.setAge_Emp(cursor.getString(6));        //อายุ
+            todoList1.setAddress_Emp(cursor.getString(7));    //ที่อยุ่
+            todoList1.setTele_Emp(cursor.getString(8));          //เบอร์โทร
+            todoList1.setLine_Emp(cursor.getString(9));       //ไลน์
+            todoList1.setFacebook_Emp(cursor.getString(10));   //เฟส
+            todoList1.setEmail_Emp(cursor.getString(11));     //อีเมล
+            todoList1.setPosition_Emp(cursor.getString(12));    //ตำแหน่ง
+            todoList1.setSalary_Emp(cursor.getString(13));    //เงินเดือน
+            todoList1.setDateApp_Emp(cursor.getString(14));   //วันที่บันทึก
+            todoList1.setImage_Emp(cursor.getBlob(15));         //ภาพ   ////  ทำให้ แสดงภาพหลายภาพไม่ได้
+
             todoList.add(todoList1);
             cursor.moveToNext();
         }
@@ -60,10 +62,10 @@ public class nameListViewDAO {
     public void update(TodoList todoList){
         TodoList updateTodoList = todoList;
         ContentValues values = new ContentValues();
-        values.put("Position_Emp",updateTodoList.getPosition_Emp());
-        values.put("Salary_Emp",updateTodoList.getSalary_Emp());
+        values.put("Idcard_Emp",updateTodoList.getIdcard_Emp());
         values.put("Name_Emp",updateTodoList.getName_Emp());
         values.put("Nickname_Emp",updateTodoList.getNickname_Emp());
+
         values.put("DateBirth_Emp",updateTodoList.getDateBirth_Emp());
         values.put("Age_Emp",updateTodoList.getAge_Emp());
         values.put("Address_Emp",updateTodoList.getAddress_Emp());
@@ -71,7 +73,8 @@ public class nameListViewDAO {
         values.put("Line_Emp",updateTodoList.getLine_Emp());
         values.put("Facebook_Emp",updateTodoList.getFacebook_Emp());
         values.put("Email_Emp",updateTodoList.getEmail_Emp());
-
+        values.put("Position_Emp",updateTodoList.getPosition_Emp());
+        values.put("Salary_Emp",updateTodoList.getSalary_Emp());
 
         values.put("ID_Emp",updateTodoList.getID_Emp());
 

@@ -19,23 +19,26 @@ public class MyData extends SQLiteOpenHelper   {
             "Password_admin TEXT"+                   //รหัสผ่าน Password  ชนิดเป็น TEXT
             ");";
 
-    private static final String tableCreateSQL2 = "CREATE TABLE Employee_db ("+     //ตาราง พนักงาน
-            "ID_Emp INTEGER PRIMARY KEY AUTOINCREMENT, "+                 //รหัสบัตรประชาชน   1
-            "Name_Emp TEXT,"+               //ชื่อ          2
-            "Sex_Emp TEXT, "+               //เพศ          3
-            "Age_Emp TEXT, "+               //อายุ          4
-            "DateBirth_Emp TEXT, "+         //วันเดือนปีเกิด      5
-            "Address_Emp TEXT, "+           //ที่อยุ่          6
-            "Nickname_Emp TEXT, "+          //ชื่อเล่น         7
-            "Tele_Emp TEXT, "+               //เบอร์โทร        8
-            "Line_Emp TEXT, "+              //ไลน์          9
-            "Facebook_Emp TEXT, "+          //Facebook    10
-            "Email_Emp TEXT, "+             //อีเมล          11
-            "Salary_Emp TEXT, "+            //เงินเดือน        12
-            "DateApp_Emp TEXT, "+           //วันที่สมัคร        13
-            "Image_Emp BLOB,"+                //รูป           14
-            "Position_Emp TEXT"+             //ตำแหน่ง         15
+    private static final String tableCreateSQL2 = "CREATE TABLE Employee_db ("+
+            //ตาราง พนักงาน
+            "ID_Emp INTEGER PRIMARY KEY AUTOINCREMENT, "+   	// ID   		1
+            "Idcard_Emp Text, "+                         //รหัสบัตรประชาชน   	2
+            "Name_Emp TEXT, "+               			//ชื่อ          		3
+            "Nickname_Emp TEXT, "+          			//ชื่อเล่น         	4
+            "Sex_Emp TEXT, "+               			//เพศ          		5
+            "DateBirth_Emp TEXT, "+         			//วันเดือนปีเกิด      	6
+            "Age_Emp TEXT, "+               			//อายุ          		7
+            "Address_Emp TEXT, "+           			//ที่อยุ่         		8
+            "Tele_Emp TEXT, "+               			//เบอร์โทร        	9
+            "Line_Emp TEXT, "+              			//ไลน์          		10
+            "Facebook_Emp TEXT, "+          			//Facebook    	11
+            "Email_Emp TEXT, "+             			//อีเมล          		12
+            "Position_Emp TEXT, "+             			//ตำแหน่ง         	13
+            "Salary_Emp TEXT, "+            			//เงินเดือน        	14
+            "DateApp_Emp TEXT, "+           			//วันที่สมัคร        	15
+            "Image_Emp BLOB "+                			//รูป           		16
             ");";
+
 
     private static final String tableCreateSQL3 = "CREATE TABLE Workoff_db ("+     //ตาราง ทำงาน
             "ID_Workoff INTEGER PRIMARY KEY AUTOINCREMENT, "+        //ID รัน AUTOINCREMENT

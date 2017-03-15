@@ -89,7 +89,7 @@
                         android:layout_height="wrap_content">
 
                         <EditText
-                            android:id="@+id/ID_Emp"
+                            android:id="@+id/Idcard_Emp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawableLeft="@drawable/id_card16"
@@ -255,7 +255,7 @@
                         android:layout_height="wrap_content">
 
                         <EditText
-                            android:id="@+id/Tel_Emp"
+                            android:id="@+id/Tele_Emp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawableLeft="@drawable/smartphone_iphone16"

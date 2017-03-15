@@ -40,7 +40,7 @@ public class NameShow extends Activity {
 
         myData = new MyData(this);
         database = myData.getWritableDatabase();
-        mCursor = database.rawQuery("SELECT * FROM admin_db", null);
+        mCursor = database.rawQuery("SELECT * FROM Employee_db", null);
 
 
         final NameListView adapter = new NameListView(this,myList);

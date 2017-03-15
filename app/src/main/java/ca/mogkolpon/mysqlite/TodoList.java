@@ -403,13 +403,21 @@ public class TodoList implements Serializable {
         DateApp_Withdraw = dateApp_Withdraw;
     }
 
+    public String getIdcard_Emp() {
+        return Idcard_Emp;
+    }
+
+    public void setIdcard_Emp(String idcard_Emp) {
+        Idcard_Emp = idcard_Emp;
+    }
+
     private int ID_admin,
             ID_Emp,
             ID_Workoff, ID_Job_Workoff, ID_Employee_Workoff,
             ID_Job, ID_Company_Job, Money_Job, ID_Company, Telename_Company, ID_Withdraw, ID_Employee_Withdraw;
 
     private String Name, sss, Name_admin, Username_admin, Password_admin,
-            Tele_Emp,Name_Emp, Sex_Emp, Age_Emp, Address_Emp, Nickname_Emp, Line_Emp, Facebook_Emp, Email_Emp, Salary_Emp, Position_Emp,
+            Idcard_Emp, Tele_Emp,Name_Emp, Sex_Emp, Age_Emp, Address_Emp, Nickname_Emp, Line_Emp, Facebook_Emp, Email_Emp, Salary_Emp, Position_Emp,
             Workoff_Workoff, DateWork_Workoff, Job_Job, Specs_Job,
             Company_Company, Address_Company, Line_Company, Facebook_Company, Email_Company, Withdraw_Withdraw,
             DateBirth_Emp, DateApp_Emp,

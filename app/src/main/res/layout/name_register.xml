@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
+    android:background="@drawable/pon2121"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -31,7 +32,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
-                android:background="#1effffff"
                 android:orientation="vertical"
                 android:padding="15dp">
                 <!--       ตำแหน่ง เงินเดือน  เริ่ม       -->
@@ -322,9 +322,10 @@
             </LinearLayout>
             <!--         กรอบ    จบ     -->
             <LinearLayout
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
+                android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
 
                 <Button
@@ -333,18 +334,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/po0"
+                    android:layout_margin="5dp"
                     android:text="บันทึก"
                     android:textColor="@color/pp"
                     android:textSize="16dp"
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/Name_Reg_But"
+                    android:id="@+id/Name_Reg_But_cancel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="ยกเลิก" />
+                    android:background="@color/pp"
+                    android:text="ยกเลิก"
+                    android:layout_margin="5dp"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
             </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

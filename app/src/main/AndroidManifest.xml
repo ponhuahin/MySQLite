@@ -23,7 +23,10 @@
         <activity android:name=".AdminShow" />
         <activity android:name=".NameRegister" />
         <activity android:name=".NameShow" />
-        <activity android:name=".NameEdit"/>
+        <activity android:name=".NameEdit" />
+        <activity android:name=".JobRegister" />
+        <activity android:name=".JobShow" />
+        <activity android:name=".JobEdit"></activity>
     </application>
 
 </manifest>

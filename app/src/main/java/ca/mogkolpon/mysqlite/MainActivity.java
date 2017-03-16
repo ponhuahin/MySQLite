@@ -102,34 +102,26 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    //Detect Back Button
+    //Detect Back Button ดักจับ ปุ่ม ออกจากระบบ ให้แจ้งเตือน ก่อน เริ่ม
     @Override
     public void onBackPressed() {
-
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
-
         alertDialog.setTitle("Confirm Exit...");
         alertDialog.setMessage("คุณต้องการออกจากโปรแกรมหรือไม่ ?");
         alertDialog.setIcon(R.drawable.user48);
-
         alertDialog.setPositiveButton("ใช่",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int which) {
-                        //คลิกใช่ ออกจากโปรแกรม
-                        finish();
+                        finish(); //คลิกใช่ ออกจากโปรแกรม
                         MainActivity.super.onBackPressed();
                     }
                 });
-
         alertDialog.setNegativeButton("ไม่",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,	int which) {
-                        //คลิกไม่ cancel dialog
-                        dialog.cancel();
+                        dialog.cancel();//คลิกไม่ cancel dialog
                     }
                 });
-
         alertDialog.show();
-
-    }
+    }//Detect Back Button ดักจับ ปุ่ม ออกจากระบบ ให้แจ้งเตือน ก่อน จบ
 }

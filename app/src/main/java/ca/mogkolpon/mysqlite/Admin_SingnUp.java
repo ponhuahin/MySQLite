@@ -21,6 +21,15 @@ public class Admin_SingnUp extends AppCompatActivity {
 ////////////////////////////////////////////////////////
         bindWidget();
         buttonController();
+    //  ปุ่ม ยกเลิก เริ่ม
+        Button delBtn = (Button)findViewById(R.id.SignInbut_cancel);                      // ปุ่ม ลบ   สร้าง delBtn เพิ่มรับค่าจาก delete_btn  น่าออกแบบ
+        delBtn.setOnClickListener(new View.OnClickListener() {                      //
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    //  ปุ่ม ยกเลิก จบ
     }   // Main Method
     private void buttonController() {
         button.setOnClickListener(new View.OnClickListener() {
@@ -50,5 +59,8 @@ public class Admin_SingnUp extends AppCompatActivity {
         userEditText = (EditText) findViewById(R.id.Username2);     //เชื่อม EditText หน้าออกแบบ  id.Username2
         passwordEditText = (EditText) findViewById(R.id.Password2); //เชื่อม EditText หน้าออกแบบ  id.Password2
         button = (Button) findViewById(R.id.SignInbut2);            //เชื่อม button หน้าออกแบบ   id.SignInbut2
+
     }
+
+
 }   // Main Class

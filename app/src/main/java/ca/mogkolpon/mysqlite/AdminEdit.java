@@ -15,6 +15,7 @@ public class AdminEdit extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.admin_edit);
 
+        // เรียก ข้อมูลที่จะแก้ไขมาโชว์ เร่ิม
         final TodoList editTodoList = (TodoList) getIntent().getSerializableExtra("editTodoList");
 
         final EditText editText = (EditText) findViewById(R.id.Name2_edit);
@@ -23,6 +24,7 @@ public class AdminEdit extends AppCompatActivity {
         editText.setText(editTodoList.getName_admin());
         editText1.setText(editTodoList.getUsername_admin());
         editText2.setText(editTodoList.getPassword_admin());
+        // เรียก ข้อมูลที่จะแก้ไขมาโชว์ จบ
 
         // ปุ้ม แก้ไข ข้อมูล  //
         final Button editBtn = (Button)findViewById(R.id.SignInbut2_edit);

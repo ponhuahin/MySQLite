@@ -39,44 +39,54 @@ public class MyData extends SQLiteOpenHelper   {
             "Image_Emp BLOB "+                			//รูป           		16
             ");";
 
-
-    private static final String tableCreateSQL3 = "CREATE TABLE Workoff_db ("+     //ตาราง ทำงาน
-            "ID_Workoff INTEGER PRIMARY KEY AUTOINCREMENT, "+        //ID รัน AUTOINCREMENT
-            "Workoff_Workoff TEXT, "+          //ทำงาน / หยุด
-            "ID_Job_Workoff int, "+            //ID งาน
-            "DateWork_Workoff Date, "+         //เวลาทำงาน
-            "DateOut_Workoff Date, "+          //เวลาเลิกงาน
-            "ID_Employee_Workoff int, "+       //ID พนักงาน
-            "DateApp_Workoff Date"+          //วันที่บันทึก
-            ");";
+//
+//    private static final String tableCreateSQL3 = "CREATE TABLE Workoff_db ("+     //ตาราง ทำงาน
+//            "ID_Workoff INTEGER PRIMARY KEY AUTOINCREMENT, "+        //ID รัน AUTOINCREMENT
+//            "Workoff_Workoff TEXT, "+          //ทำงาน / หยุด
+//            "ID_Job_Workoff int, "+            //ID งาน
+//            "DateWork_Workoff Date, "+         //เวลาทำงาน
+//            "DateOut_Workoff Date, "+          //เวลาเลิกงาน
+//            "ID_Employee_Workoff int, "+       //ID พนักงาน
+//            "DateApp_Workoff Date"+          //วันที่บันทึก
+//            ");";
 
     private static final String tableCreateSQL4 = "CREATE TABLE Job_db ("+     //ตาราง รับงาน
-            "ID_Job INTEGER PRIMARY KEY AUTOINCREMENT, "+        //ID รัน AUTOINCREMENT
-            "Job_Job TEXT, "+                 //ชื่แงาน
-            "ID_Company_Job int, "+           //ID บริษัท
-            "Money_Job int, "+                //เงิน
-            "DateDue_Job Date, "+             //กำหนดส่งงาน
-            "Specs_Job TEXT, "+               //รายละเอียดงาน
-            "Getjob_Job Date"+              //วันที่บันทึก รับงาน
+            "ID_Job INTEGER PRIMARY KEY AUTOINCREMENT, "+        //ID รัน AUTOINCREMENT 0
+            "Name_Job TEXT, "+                 //ชื่แงาน                     1
+            "Address_Job TEXT, "+              //ที่อยุ่                      2
+            "Money_Job TEXT, "+                //เงิน                       3
+
+            "DateGet_Job TEXT, "+              //วันที่บันทึก รับงาน             4
+            "DateDue_Job TEXT, "+              //กำหนดส่งงาน                5
+            "Specs_Job TEXT, "+               //รายละเอียดงาน                6
+
+            "Name_Com_Job TEXT, "+             //ชื่อ บริษัท                  7
+            "Address_Com_Job TEXT, "+          //ที่อยุ่ บริษัท                 8
+            "Tele_Job TEXT, "+                 //เบอร์โทร        	          9
+            "Line_Job TEXT, "+                 //ไลน์          		      10
+            "Facebook_Job TEXT, "+             //Facebook    	          11
+            "Email_Job TEXT, "+                //อีเมล          		      12
+
+            "DateApp_Job TEXT "+              //วันที่สมัคร        	          13
             ");";
 
-    private static final String tableCreateSQL5 = "CREATE TABLE Company_db ("+     //ตาราง รับงาน
-            "ID_Company INTEGER PRIMARY KEY AUTOINCREMENT, "+        //ID รัน AUTOINCREMENT
-            "Company_Company TEXT, "+         //ชื่อบริษัท
-            "Address_Company TEXT, "+         //ที่อยุ่ บริษัท
-            "Telename_Company int, "+         //เบอร์โทร
-            "Line_Company TEXT, "+            //ไลน์
-            "Facebook_Company TEXT, "+        //Facebook
-            "Email_Company TEXT, "+           //อีเมล
-            "DateApp_Company Date"+         //วันที่บันทึก
-            ");";
-
-    private static final String tableCreateSQL6 = "CREATE TABLE Withdraw_db ("+     //ตาราง รับงาน
-            "ID_Withdraw INTEGER PRIMARY KEY AUTOINCREMENT, "+        //ID รัน AUTOINCREMENT
-            "Withdraw_Withdraw TEXT,"+         //เบิกเงิน
-            "ID_Employee_Withdraw int"+       //ID พนักงาน
-            "DateApp_Withdraw Date"+          //วันที่บันทึก
-            ");";
+//    private static final String tableCreateSQL5 = "CREATE TABLE Company_db ("+     //ตาราง รับงาน
+//            "ID_Company INTEGER PRIMARY KEY AUTOINCREMENT, "+        //ID รัน AUTOINCREMENT
+//            "Company_Company TEXT, "+         //ชื่อบริษัท
+//            "Address_Company TEXT, "+         //ที่อยุ่ บริษัท
+//            "Telename_Company int, "+         //เบอร์โทร
+//            "Line_Company TEXT, "+            //ไลน์
+//            "Facebook_Company TEXT, "+        //Facebook
+//            "Email_Company TEXT, "+           //อีเมล
+//            "DateApp_Company Date"+         //วันที่บันทึก
+//            ");";
+//
+//    private static final String tableCreateSQL6 = "CREATE TABLE Withdraw_db ("+     //ตาราง รับงาน
+//            "ID_Withdraw INTEGER PRIMARY KEY AUTOINCREMENT, "+        //ID รัน AUTOINCREMENT
+//            "Withdraw_Withdraw TEXT,"+         //เบิกเงิน
+//            "ID_Employee_Withdraw int"+       //ID พนักงาน
+//            "DateApp_Withdraw Date"+          //วันที่บันทึก
+//            ");";
 
     public MyData(Context context) {
         super(context, database_name, null, databasVersion);
@@ -97,10 +107,10 @@ public class MyData extends SQLiteOpenHelper   {
 //            String insertData2 = "INSERT INTO Employee_db (Nickname_Employee) VALUES ('ponhuahin');";
 //            // คำสั่ง INSERT เพื่มข้อมูล ในตาราง admin_db ในคอลัม Username ข้อมูลที่ใส่คือ admin
 //            db.execSQL(insertData2);
-        db.execSQL(tableCreateSQL3);
+//        db.execSQL(tableCreateSQL3);
         db.execSQL(tableCreateSQL4);
-        db.execSQL(tableCreateSQL5);
-        db.execSQL(tableCreateSQL6);
+//        db.execSQL(tableCreateSQL5);
+//        db.execSQL(tableCreateSQL6);
 
         //ทดสอบ  ฐานข้อมูล โดย ใส่ข้อมูล ลงไป
         //String insertData1 = "INSERT INTO admin_db (Username) VALUES ('admin');";

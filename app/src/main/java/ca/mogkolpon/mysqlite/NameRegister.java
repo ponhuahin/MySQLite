@@ -32,7 +32,7 @@ public class NameRegister extends AppCompatActivity {
     MyData myData;
     /////////////////////////////
     private EditText Position_Emp, Salary_Emp, Idcard_Emp, Name_Emp, Nickname_Emp, DateBirth_Emp, Age_Emp, Address_Emp, Tele_Emp, Line_Emp, Facebook_Emp, Email_Emp;
-    private Button Name_Reg_But_Save, Name_Reg_But;
+    private Button Name_Reg_But_Save;
     private String position_emp, salary_emp, idcard_emp, name_emp, nickname_emp, datebirth_emp, age_emp,
             address_emp, tele_emp, line_emp, facebook_emp, email_emp, image_emp, dateapp_emp, imagePathString, imageNameString;
     String Sex_Emp0 = "ชาย";
@@ -45,6 +45,17 @@ public class NameRegister extends AppCompatActivity {
         setContentView(R.layout.name_register);
 
 ///////////////
+
+        //  ปุ่ม ยกเลิก เริ่ม
+        Button delBtn = (Button)findViewById(R.id.Name_Reg_But_cancel);                      // ปุ่ม ลบ   สร้าง delBtn เพิ่มรับค่าจาก delete_btn  น่าออกแบบ
+        delBtn.setOnClickListener(new View.OnClickListener() {                      //
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        //  ปุ่ม ยกเลิก จบ
+
         bindWidget();
         buttonController();
 
@@ -214,7 +225,7 @@ public class NameRegister extends AppCompatActivity {
         Email_Emp = (EditText) findViewById(R.id.Email_Emp);            //อีเมล              11
 
         Name_Reg_But_Save = (Button) findViewById(R.id.Name_Reg_But_Save);            //เชื่อม button หน้าออกแบบ   id.SignInbut2
-        Name_Reg_But = (Button) findViewById(R.id.Name_Reg_But);
+//        Name_Reg_But_cancel = (Button) findViewById(R.id.Name_Reg_But_cancel);
 
     }
     /////////////////////////
